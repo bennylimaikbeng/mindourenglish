@@ -1,0 +1,24 @@
+      
+
+<div class="modal">
+    <ion-header-bar class="bar-positive">
+      <i class="ion-chevron-left iconsize" ng-click="closeSearch()"></i>
+      <h1 class="title">Search</h1>
+    </ion-header-bar>           
+        
+    <ion-content class="modalbackground">    
+    <div class="padding">
+      <button ng-if="lastReadingId" class="button button-block button-calm button-outline" ng-click="jumpToId(lastReadingId)" style="margin-bottom:8px !important">Continue reading</button>
+      <input type="text" ng-model="searchText" placeholder="Showing top 20. Search any keyword" class="textinput" style="width:100%">
+    </div>
+    <div style="text-align: center; margin-bottom: 10px"><span ng-if="searchText" class="grey">Modify your search</span></div>
+    <ion-list>
+      <ion-item class="item item-text-wrap slighttransparent" ng-repeat="sample in searchSample | filter : searchText | limitTo : 20" ng-click="jumpToId(sample.id)">
+        <div ng-if="sample.category" class="category">{{sample.category}} <span ng-if="sample.hashtag">{{sample.hashtag}}</span></div>
+        <div ng-if="sample.title"><b>{{sample.title}}</b></div>
+        <div ng-if="sample.item">{{sample.item}}<br></div>
+      </ion-item>
+      <div class="gap"></div>
+    </ion-list>
+    </ion-content>
+</div>

@@ -1,0 +1,123 @@
+
+<div style="overflow-y:auto;">
+  <div ng-swipe-left="change('left')" ng-swipe-right="change('right')" style="background: url(img/{{myBackground}}.jpg);background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-position:center; min-height: 100%; margin: 0; background-repeat: no-repeat; background-position:center;">
+          
+    <div class="container">
+      <div ng-if="!thing.id && loadingError == false" class="loading">Loading notes</div>
+      <div ng-if="thing.category" class="category">{{thing.category}} <span ng-if="thing.hashtag">{{thing.hashtag}}</span>
+        <span><a ng-if="thing.url" ng-href="{{thing.url}}" class="seemore ion-earth" onclick="window.open(this.href, '_system', 'location=no'); return false;"> Link</a></span>
+        <span class="starpoints" ng-click="statistic()">{{myStarPoints | currency}}</span>
+      </div>
+
+      <div ng-if="hideQuestion">
+      <button ng-if="showRedeemBonus>0" class="button button-block button-balanced" ng-click="redeemBonus(showRedeemBonus)">Redeem my bonus ${{showRedeemBonus}}</button>
+      <div class="row" style="text-align: center;">
+        <span class="col"><img src="img/S5.png" class="coin1" ng-click="addWager(5)"></span>
+        <span class="col"><img src="img/S10.png" class="coin2" ng-class="{disabledcoin: maxWager<10}" ng-click="addWager(10)"></span>
+        <span class="col"><img src="img/S50.png" class="coin3" ng-class="{disabledcoin: maxWager<50}" ng-click="addWager(50)"></span>
+        <span class="col"><img src="img/S100.png" class="coin4" ng-class="{disabledcoin: maxWager<100}" ng-click="addWager(100)"></span>
+      </div>
+      <div class="row" style="text-align: center;">
+        <span class="col"><img src="img/S500.png" class="coin1" ng-class="{disabledcoin: maxWager<500}" ng-click="addWager(500)"></span>
+        <span class="col"><img src="img/S1000.png" class="coin2" ng-class="{disabledcoin: maxWager<1000}" ng-click="addWager(1000)"></span>
+        <span class="col"><img src="img/S5000.png" class="coin3" ng-class="{disabledcoin: maxWager<5000}" ng-click="addWager(5000)"></span>
+        <span class="col"><img src="img/S10000.png" class="coin4" ng-class="{disabledcoin: maxWager<10000}" ng-click="addWager(10000)"></span>
+      </div>   
+      <div class="row" style="text-align: center;">
+        <span class="col"><img src="img/S20000.png" class="coin1" ng-class="{disabledcoin: maxWager<20000}" ng-click="addWager(20000)"></span>
+        <span class="col"><img src="img/S50000.png" class="coin2" ng-class="{disabledcoin: maxWager<50000}" ng-click="addWager(50000)"></span>
+        <span class="col"><img src="img/S100000.png" class="coin3" ng-class="{disabledcoin: maxWager<100000}" ng-click="addWager(100000)"></span>
+        <span class="col"><img src="img/reset.png" class="coin1" ng-click="addWager(-1)"></span>
+      </div>           
+      <button class="button button-block button-positive" ng-click="wagerNow(thing.id)">Let's go with ${{currentWage}} <span ng-if="currentWage==maxWager">(maximum)</span></button>
+      </div>
+
+      <div ng-if="!hideQuestion">
+        <div ng-if="thing.title" class="thingtitle" ng-class="{thingtitleflatbottom: thing.mcqanswer && showInputBox == 'true'}">{{thing.title}}</div>
+        <div ng-if="thing.description" class="description">{{thing.description}}</div>
+
+        <div ng-if="thing.detail" class="detail ion-arrow-right-b" ng-class="{meaning: thing.wrong}" ng-repeat="detail in thing.detail"> {{detail}}</div>
+        <div ng-if="thing.structured && showInputBox == 'false'" class="detail ion-arrow-right-b" ng-repeat="structured in thing.structured"> {{structured}}</div>
+
+        <div ng-if="thing.wrong" class="wrong ion-close"> {{thing.wrong}}</div>
+        <div ng-if="thing.correct" class="correct ion-checkmark" ng-click="textToSpeech(thing.correct)"> {{thing.correct}}
+          <span class="speaker ion-volume-medium"></span>
+        </div>
+        <div ng-if="thing.wrong2" class="wrong ion-close"> {{thing.wrong2}}</div>
+        <div ng-if="thing.correct2" class="correct ion-checkmark" ng-click="textToSpeech(thing.correct2)"> {{thing.correct2}}
+          <span class="speaker ion-volume-medium"></span>
+        </div>        
+
+        <div ng-if="thing.example" class="example ion-compose" ng-click="textToSpeech(thing.example)"> {{thing.example}}<span class="speaker ion-volume-medium"> </span></div>
+        <div ng-if="thing.moreexample && showInputBox == 'true'">
+          <button class="button button-block button-balanced button-outline" ng-click="fillStructured(thing.id)">Show {{thing.moreexample.length}} more example<span ng-if="thing.moreexample.length>1">s</span></button>
+        </div>
+
+        <div ng-if="thing.elaboration" class="elaboration ion-pricetag"> {{thing.elaboration}}</div>
+        <div ng-if="thing.image"><img class="image" ng-src="{{thing.image}}"></div>
+        
+        <div ng-if="thing.answer && showInputBox == 'true'">
+          <input type="text" ng-model="userAnswer" placeholder="{{answerPlaceholder}}">
+          <button class="button button-block button-assertive button-outline" ng-click="submitAnswer(userAnswer); userAnswer = null">Submit answer</button>
+          <button class="button button-block button-balanced button-outline" ng-click="fillAnswer(thing.id)">Get answer</button>
+        </div>
+        <div ng-if="thing.answer && showInputBox == 'false'" class="correct ion-ios-checkmark">{{thing.answer}} <i class="correct ion-ios-checkmark"></i></div>
+
+        <div ng-if="thing.moreexample && showInputBox == 'false'" class="example ion-compose" ng-click="textToSpeech(moreexample)" ng-repeat="moreexample in thing.moreexample"> {{moreexample}} <span class="speaker ion-volume-medium"></span></div>
+        <div ng-if="thing.remark" class="remark ion-information-circled"> {{thing.remark}}</div>
+
+        <div ng-if="thing.structured && showInputBox == 'true'">
+          <button class="button button-block button-balanced button-outline" ng-click="fillStructured(thing.id)">Get answer</button>
+        </div>
+
+        <div ng-if="thing.mcqanswer && showInputBox == 'true'">
+          <div ng-if="previousInputBoxStatus == 'true'" class="wager ion-ios-pricetag"> {{currentWage | currency}}</div>
+          <div class="options ion-android-radio-button-on" on-double-tap="checkAnswer(option)" ng-repeat="option in thing.options"> {{option}}</div>
+          <div class="signature" ng-if="doubleTapTutorial == 'true' && noscreenshot==true">Double tap to select answer</div>
+        </div>
+
+        <div ng-if="thing.mcqanswer && showInputBox == 'false'">
+          <div class="options ion-checkmark" on-double-tap="showResult()"> {{thing.mcqanswer}}</div>
+          <div ng-if="thing.mcqremark" class="remark ion-information-circled" on-double-tap="showResult()"> {{thing.mcqremark}}</div>
+        </div>
+      
+        <div class="signature" ng-if="noscreenshot==false">
+          <!-- <span><img src="img/badgeappstore.png" style="height: 30px"></span>
+          <span><img src="img/badgegoogleplay.png" style="height: 30px"></span> -->
+          <span>Search 'Mind Our English' in App Store and Play Store</span>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="row float-button hide-on-keyboard-open" ng-if="noscreenshot==true">
+      <button class="button-icon hideShare" ng-click="showActions()">
+        <i class="ion-android-share-alt iconsize" style="color:#007ee5"></i>
+      </button>                       
+      <button class="button-icon" ng-click="category()">
+        <i class="ion-android-list iconsize" style="color:#ff0084"></i>
+      </button>  
+      <button class="button-icon" ng-click="search()">
+        <i class="ion-search iconsize" style="color:#ffffff"></i>
+      </button>  
+      <button class="button-icon" ng-click="statistic()">
+        <i class="ion-social-usd iconsize" style="color:#FFD700"></i>
+      </button>         
+      <button class="button-icon" ng-click="background()">
+        <i class="ion-easel iconsize" style="color:#00e461"></i>
+      </button>
+      <button class="button-icon" ng-click="privacy()">
+        <i class="ion-information-circled iconsize" style="color:#45668e"></i>
+      </button>       
+    </div>
+
+    <div class="page-number hide-on-keyboard-open" ng-if="noscreenshot==true" ng-class="{lowerpagenumber: iapVersion == true}">
+      <span ng-if="showIAPMessage == 'true' && swipeTutorial == 'true'"><a ng-href="{{iapLink}}" class="remove-ads" onclick="window.open(this.href, '_system', 'location=no'); return false;"> Upgrade app</a></span>   
+      <span ng-if="swipeTutorial == 'false' && !hideQuestion && !thing.mcqanswer">Swipe left for next example</span>
+      <span ng-if="swipeTutorial == 'true' && !thing.mcqanswer">{{pageNumber}} / {{(things | filter: filterByMCQAnswer).length}}</span>
+    </div>
+
+  </div>
+
+</div>

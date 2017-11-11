@@ -1,0 +1,9 @@
+{
+    "AudioToolbox.framework": 2,
+    "StoreKit.framework": 2,
+    "Foundation.framework": 2,
+    "AVFoundation.framework": 2,
+    "Social.framework": 2,
+    "MessageUI.framework": 2,
+    "QuartzCore.framework": 2
+}

@@ -1,0 +1,85 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "com.darktalker.cordova.screenshot": {
+            "PACKAGE_NAME": "com.spm.mindourenglish"
+        },
+        "cordova-instagram-plugin": {
+            "PACKAGE_NAME": "com.spm.mindourenglish"
+        },
+        "cordova-plugin-admob": {
+            "PACKAGE_NAME": "com.spm.mindourenglish"
+        },
+        "cordova-plugin-app-version": {
+            "PACKAGE_NAME": "com.spm.mindourenglish"
+        },
+        "cordova-plugin-appavailability": {
+            "PACKAGE_NAME": "com.spm.mindourenglish"
+        },
+        "cordova-plugin-apprate": {
+            "PACKAGE_NAME": "com.spm.mindourenglish"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.spm.mindourenglish"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.spm.mindourenglish"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.spm.mindourenglish"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.spm.mindourenglish"
+        },
+        "cordova-plugin-nativeaudio": {
+            "PACKAGE_NAME": "com.spm.mindourenglish"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.spm.mindourenglish"
+        },
+        "cordova-plugin-tts": {
+            "PACKAGE_NAME": "com.spm.mindourenglish"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.spm.mindourenglish"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.spm.mindourenglish"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.spm.mindourenglish"
+        },
+        "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "com.spm.mindourenglish"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.spm.mindourenglish"
+        }
+    },
+    "dependent_plugins": {
+        "com.verso.cordova.clipboard": {
+            "PACKAGE_NAME": "com.spm.mindourenglish"
+        },
+        "cordova-admobsdk": {
+            "PACKAGE_NAME": "com.spm.mindourenglish"
+        },
+        "cordova-plugin-app-event": {
+            "PACKAGE_NAME": "com.spm.mindourenglish"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.spm.mindourenglish"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.spm.mindourenglish"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.spm.mindourenglish"
+        }
+    }
+}
