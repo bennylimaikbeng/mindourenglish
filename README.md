@@ -1,25 +1,10 @@
-Ionic App Base
-=====================
+Over 1000 quiz questions. Over 1000 example sentences. 
 
-A starting project for Ionic that optionally supports using custom SCSS.
+Suitable for IELTS, TOEFL, TOEIC, MUET & SPM.
 
-## Using this project
-
-We recommend using the [Ionic CLI](https://github.com/driftyco/ionic-cli) to create new Ionic projects that are based on this project but use a ready-made starter template.
-
-For example, to start a new Ionic project with the default tabs interface, make sure the `ionic` utility is installed:
-
-```bash
-$ npm install -g ionic
-```
-
-Then run: 
-
-```bash
-$ ionic start myProject tabs
-```
-
-More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/getting-started) page and the [Ionic CLI](https://github.com/driftyco/ionic-cli) repo.
-
-## Issues
-Issues have been disabled on this repo, if you do find an issue or have a question consider posting it on the [Ionic Forum](http://forum.ionicframework.com/).  Or else if there is truly an error, follow our guidelines for [submitting an issue](http://ionicframework.com/submit-issue/) to the main Ionic repository.
+![alt text](https://lh3.googleusercontent.com/ZUjZivOqDNr9u9fX9anghtnszBAI2mIiBe8QHhTc94naAxhOwGr3y1s0E8qqm6mBHg=h310)
+![alt text](https://lh3.googleusercontent.com/Xehne2muXfIGOk2DlZF9bGCpxYN2suiQnZbQKZME4V-OsKR1mt5MzICqF2nelU01JvJP=h310)
+![alt text](https://lh3.googleusercontent.com/ZZP-1SCoucl3TuFQ-NH9uYdagUhFG0lqc04veA9scns-q3SokkTInb2BjaWgWtZ_pmK5=h310)
+![alt text](https://lh3.googleusercontent.com/2fKlNNmqtHKcsqqiY40T1fYcu087XpHGxnFVG8q-o7MIvr4a9bF_ieH63AM6f5nUxgE=h310)
+![alt text](https://lh3.googleusercontent.com/43krCmC5PQgupySq7kKfivwlRCsnTHWcPt6zaiHkKoTPbpx1m9-4edvyxoT4wJ2xcQ=h310)
+![alt text](https://lh3.googleusercontent.com/ZR440A2vZH767o7_GJZljf59qk13C8OAKq8-PSI6StN4S9Zu8hfPirIv9Xz_18axUsI=h310)
